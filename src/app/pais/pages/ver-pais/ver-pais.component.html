@@ -4,120 +4,122 @@
 </div>
 
 <ng-template #divPais>
-    <div class="row bg-primary">
-        <div class="col-12">
-            <h1 class="fs-4 text-end m-0">
-                <small>
-                    {{ pais.name.common }}
-                </small></h1>
+    <div class="animate__animated animate__lightSpeedInLeft">
+        <div class="row bg-primary">
+            <div class="col-12">
+                <h1 class="fs-4 text-end m-0">
+                    <small>
+                        {{ pais.name.common }}
+                    </small></h1>
+            </div>
         </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col ps-0">
-            <img 
-            [src]="pais.flags.png" 
-            class="img-fluid">
-        </div>
-        <div class="col">
-
-            <div class="row">
-                <div class="col-4">
-                    <p>Capital</p>
-                </div>
-                <div class="col-1">
-                    :
-                </div>
-                <div class="col">
-                    <p>
-                        {{ pais.capital }}   
-                    </p>
-                </div>
+        <hr>
+        <div class="row">
+            <div class="col ps-0">
+                <img 
+                [src]="pais.flags.png" 
+                class="img-fluid">
             </div>
-
-            <div class="row">
-                <div class="col-4">
-                    <p>Población</p>
+            <div class="col">
+    
+                <div class="row">
+                    <div class="col-4">
+                        <p>Capital</p>
+                    </div>
+                    <div class="col-1">
+                        :
+                    </div>
+                    <div class="col">
+                        <p>
+                            {{ pais.capital }}   
+                        </p>
+                    </div>
                 </div>
-                <div class="col-1">
-                    :
+    
+                <div class="row">
+                    <div class="col-4">
+                        <p>Población</p>
+                    </div>
+                    <div class="col-1">
+                        :
+                    </div>
+                    <div class="col">
+                        <p>
+                            {{ pais.population | number }}  hab 
+                        </p>
+                    </div>
                 </div>
-                <div class="col">
-                    <p>
-                        {{ pais.population | number }}  hab 
-                    </p>
+    
+                <div class="row">
+                    <div class="col-4">
+                        <p>Continente</p>
+                    </div>
+                    <div class="col-1">
+                        :
+                    </div>
+                    <div class="col">
+                        <small class="col badge text-bg-warning"
+                                *ngFor="let item of pais.continents">
+                                {{ item }}
+                        </small>
+                    </div>
                 </div>
+    
+                <div class="row">
+                    <div class="col-4">
+                        <p>Superficie</p>
+                    </div>
+                    <div class="col-1">
+                        :
+                    </div>
+                    <div class="col">
+                        <small class="col">
+                                {{ pais.area | number }} Km<sup>2</sup>
+                        </small>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-4">
+                        <p>Mapas</p>
+                    </div>
+                    <div class="col-1">
+                        :
+                    </div>
+                    <div class="col">
+                        <a  [href]="pais.maps.googleMaps"
+                            class="col">
+                            Ver en google ↗️
+                        </a>
+                    </div>
+                </div>
+    
             </div>
-
-            <div class="row">
-                <div class="col-4">
-                    <p>Continente</p>
+    
+            <div class="row mt-5">
+                <div class="col-12 py-2 bg-primary">
+                    Traducciones
                 </div>
-                <div class="col-1">
-                    :
+                <div class="col-4 py-3">
+                    Nombre Official
                 </div>
-                <div class="col">
-                    <small class="col badge text-bg-warning"
-                            *ngFor="let item of pais.continents">
-                            {{ item }}
-                    </small>
+                <div class="col-8 py-3">
+                    <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['ara'].official }}</small>
+                    <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['fra'].official }}</small>
+                    <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['jpn'].official }}</small>
+                    <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['spa'].official }}</small>
+                    <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['por'].official }}</small>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-4">
-                    <p>Superficie</p>
+                <div class="col-4 py-3">
+                    Nombre Común
                 </div>
-                <div class="col-1">
-                    :
+                <div class="col-8 py-3">
+                    <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['ara'].common }}</small>
+                    <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['fra'].common }}</small>
+                    <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['jpn'].common }}</small>
+                    <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['spa'].common }}</small>
+                    <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['por'].common }}</small>
                 </div>
-                <div class="col">
-                    <small class="col">
-                            {{ pais.area | number }} Km<sup>2</sup>
-                    </small>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-4">
-                    <p>Mapas</p>
-                </div>
-                <div class="col-1">
-                    :
-                </div>
-                <div class="col">
-                    <a  [href]="pais.maps.googleMaps"
-                        class="col">
-                        Ver en google ↗️
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-12 py-2 bg-primary">
-                Traducciones
-            </div>
-            <div class="col-4 py-3">
-                Nombre Official
-            </div>
-            <div class="col-8 py-3">
-                <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['ara'].official }}</small>
-                <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['fra'].official }}</small>
-                <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['jpn'].official }}</small>
-                <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['spa'].official }}</small>
-                <small class="badge rounded-pill text-bg-secondary me-2">{{ pais.translations['por'].official }}</small>
-            </div>
-            <div class="col-4 py-3">
-                Nombre Común
-            </div>
-            <div class="col-8 py-3">
-                <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['ara'].common }}</small>
-                <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['fra'].common }}</small>
-                <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['jpn'].common }}</small>
-                <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['spa'].common }}</small>
-                <small class="badge rounded-pill text-bg-light me-2">{{ pais.translations['por'].common }}</small>
             </div>
         </div>
     </div>

@@ -19,8 +19,9 @@ body {
 
 th,
 td,
-li, 
-a {
+li,
+a
+ {
     color: var(--texto);
 }
 
