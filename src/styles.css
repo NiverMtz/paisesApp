@@ -1,3 +1,60 @@
+:root {
+    --amarillo: #F5E000;
+    --gris: #FA5723;
+    --fondo: #212121;
+    --texto: #ffffff;
+    --letra: 'Nunito Sans', sans-serif;
+    --heightCover: 200px;
+}
+
 .small-flag {
     width: 50px;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: var(--letra);
+}
+
+th,
+td,
+li, 
+a {
+    color: var(--texto);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+
+/* Modifica Bootstrap */
+.table-hover tbody tr:hover td, 
+.table-hover tbody tr:hover th {
+    background-color: var(--amarillo);
+}
+
+/* Utilidades */
+.fondo__amarillo {
+    background: var(--amarillo) !important;
+}
+
+.fondo__gris {
+    background: var(--gris)
+}
+
+.fondo__traslucido {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    height: var(--heightCover);
+    width: 100%;
+}
+
+.height__cover {
+    height: var(--heightCover)
 }

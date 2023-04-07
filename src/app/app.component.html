@@ -1,8 +1,23 @@
-<div class="row container mt-4">
-    <div class="col-3">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div class="col">
-        <router-outlet></router-outlet>
+<div class="height__cover">
+    <div class="fondo__traslucido"></div>
+    <img 
+    src="https://cdn.pixabay.com/photo/2012/12/10/04/26/flags-69190_1280.jpg"
+    class="object-fit-cover mh-100 w-100">
+</div>
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col p-0 me-5">
+            <router-outlet></router-outlet>
+        </div>
+
+        <div class="col-3 p-0 fondo__amarillo">
+            <h2 
+            class="fondo__gris fs-6 text-center py-2">
+            Busquedas
+            </h2>
+            <app-sidebar></app-sidebar>
+        </div>
+
     </div>
 </div>
